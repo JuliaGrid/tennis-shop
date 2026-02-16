@@ -1,7 +1,7 @@
 import Link from "next/link";
 import classes from "./styles.module.css";
 import { rackets } from "../../public/mocks/mocks";
-import { RacketItem } from "@/container/racketItem";
+import { RacketItem } from "@/containers/racketItem";
 
 export default function Home() {
   const reacketsList = rackets.slice(0, 3);

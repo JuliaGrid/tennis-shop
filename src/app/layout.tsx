@@ -1,5 +1,5 @@
 import "./global.css";
-import { Header } from "@/container/header";
+import { Header } from "@/containers/header";
 
 export default function RootLayout({
   children,

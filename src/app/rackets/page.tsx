@@ -1,4 +1,4 @@
-import { RacketItem } from "@/container/racketItem";
+import { RacketItem } from "@/containers/racketItem";
 import classes from "./styles.module.css";
 import { rackets } from "../../../public/mocks/mocks";
 
