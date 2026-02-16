@@ -1,0 +1,26 @@
+.rackets {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rackets__filters {
+  width: 30%;
+}
+
+.rackets__catalog {
+  width: 70%;
+}
+
+.rackets__filterList {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.rackets__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
