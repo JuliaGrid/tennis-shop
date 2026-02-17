@@ -22,3 +22,14 @@
   grid-column: 3;
   justify-self: end;
 }
+
+.header__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.header__item {
+  margin-left: 16px;
+}
