@@ -1,6 +1,6 @@
-import { Footer } from "@/containers/Foot";
+import { Footer } from "@/containers/Footer";
 import "./global.css";
-import { Header } from "@/containers/Head";
+import { Header } from "@/containers/Header";
 import { Open_Sans } from "next/font/google";
 
 const openSans = Open_Sans({
