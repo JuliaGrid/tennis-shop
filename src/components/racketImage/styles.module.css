@@ -1,6 +1,6 @@
 .cardImageWrapper {
   width: 100%;
-  aspect-ratio: 3 / 4; /* квадрат */
+  aspect-ratio: 3 / 4;
   background: white;
   display: flex;
   align-items: center;
@@ -13,5 +13,5 @@
 .cardImage {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* или cover */
+  object-fit: contain;
 }

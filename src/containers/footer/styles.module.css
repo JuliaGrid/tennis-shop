@@ -8,15 +8,9 @@
   padding-top: 20px;
   padding-right: 40px;
   padding-left: 40px;
-  /* display: grid;
-  grid-template-rows: 1fr auto 1fr;
-  align-items: stretch; */
 }
 
 .footer__title {
-  /* grid-row: 2;
-  justify-self: start; 
-  align-self: center; вертикально в своей строке */
   font-size: 24px;
   font-weight: 500;
   text-transform: uppercase;
@@ -24,9 +18,6 @@
 }
 
 .footer__note {
-  /* grid-row: 3;
-  justify-self: start; 
-  align-self: end;  */
   font-size: 14px;
   color: #9ca3af;
 }
