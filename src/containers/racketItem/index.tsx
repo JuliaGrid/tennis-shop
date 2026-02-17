@@ -1,6 +1,6 @@
 import Link from "next/link";
 import classes from "./styles.module.css";
-import { RacketImage } from "@/components/racketImage";
+import { RacketImage } from "@/components/RacketImage";
 import { ROUTES } from "@/constants/routes";
 
 interface IRacketItem {

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import classes from "./styles.module.css";
 import { rackets } from "../../public/mocks/mocks";
-import { RacketItem } from "@/containers/racketItem";
+import { RacketItem } from "@/containers/RacketItem";
 import { ROUTES } from "@/constants/routes";
 
 export default function Home() {
