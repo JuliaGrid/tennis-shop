@@ -20,7 +20,7 @@ const RacketPage: FC<PageProps<"/racket/[id]">> = async ({ params }) => {
   console.log(racket);
 
   return (
-    <div className={classes.racket}>
+    <section className={classes.racket}>
       <div className={classes.racket__info}>
         <p>{brand?.name}</p>
         <h2>{model}</h2>
@@ -28,7 +28,7 @@ const RacketPage: FC<PageProps<"/racket/[id]">> = async ({ params }) => {
       </div>
       <RacketImage imageUrl={imageUrl} alt={model} />
       <strong className={classes.racket__price}>€ {price}</strong>
-    </div>
+    </section>
   );
 };
 

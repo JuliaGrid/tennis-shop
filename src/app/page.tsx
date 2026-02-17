@@ -8,7 +8,7 @@ export default function Home() {
   const reacketsList = rackets.slice(0, 3);
 
   return (
-    <div className={classes.carousel}>
+    <section className={classes.carousel}>
       <div className={classes.carousel__header}>
         <h2 className={classes.carousel__title}>Ракетки</h2>
         <Link href={ROUTES.rackets} className={classes.carousel__all}>
@@ -26,6 +26,6 @@ export default function Home() {
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 }

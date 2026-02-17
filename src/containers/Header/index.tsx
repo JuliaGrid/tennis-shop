@@ -5,7 +5,7 @@ import { NavigationLink } from "@/components/NavigationLink";
 
 export function Header() {
   return (
-    <div className={classes.header}>
+    <header className={classes.header}>
       <div className={classes.header__wrapper}>
         <h1 className={classes.header__title}>
           <Link href={ROUTES.home}>Tennis store</Link>
@@ -22,6 +22,6 @@ export function Header() {
           </ul>
         </nav>
       </div>
-    </div>
+    </header>
   );
 }
