@@ -4,6 +4,7 @@ import classes from "./styles.module.css";
 import { usePathname } from "next/navigation";
 import classnames from "classnames";
 import Link from "next/link";
+import { ROUTES } from "@/constants/routes";
 
 export function NavigationMenu() {
   const pathname = usePathname();
@@ -13,17 +14,17 @@ export function NavigationMenu() {
       <ul className={classes.header__list}>
         <li
           className={classnames(classes.header__item, {
-            [classes.header__itemActive]: pathname === "/",
+            [classes.header__itemActive]: pathname === ROUTES.home,
           })}
         >
-          <Link href="/">Главная</Link>
+          <Link href={ROUTES.home}>Главная</Link>
         </li>
         <li
           className={classnames(classes.header__item, {
-            [classes.header__itemActive]: pathname === "/rackets",
+            [classes.header__itemActive]: pathname === ROUTES.rackets,
           })}
         >
-          <Link href="/rackets">Ракетки</Link>
+          <Link href={ROUTES.rackets}>Ракетки</Link>
         </li>
       </ul>
     </nav>

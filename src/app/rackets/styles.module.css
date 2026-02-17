@@ -1,6 +1,8 @@
 .rackets {
   display: flex;
   justify-content: space-between;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .rackets__filters {
@@ -9,6 +11,11 @@
 
 .rackets__catalog {
   width: 70%;
+}
+
+.rackets__title {
+  font-weight: 500;
+  color: #262626;
 }
 
 .rackets__filterList {
@@ -23,4 +30,5 @@
   padding: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 40px;
 }

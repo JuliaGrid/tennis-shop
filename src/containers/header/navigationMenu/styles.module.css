@@ -7,8 +7,9 @@
 
 .header__item {
   margin-left: 16px;
+  color: #555e6c;
 }
 
 .header__itemActive {
-  color: green;
+  color: #ffaa20;
 }

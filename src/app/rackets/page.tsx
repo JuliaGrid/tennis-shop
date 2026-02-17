@@ -6,7 +6,7 @@ export default function RacketsPage() {
   const reacketsList = rackets.slice(0, 3);
 
   return (
-    <main className={classes.rackets}>
+    <div className={classes.rackets}>
       <aside className={classes.rackets__filters}>
         <div className={classes.rackets__brandsWrapper}>
           <h4 className={classes.rackets__brandsTitle}>Бренд</h4>
@@ -32,6 +32,6 @@ export default function RacketsPage() {
           ))}
         </ul>
       </div>
-    </main>
+    </div>
   );
 }
