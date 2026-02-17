@@ -1,7 +1,7 @@
 import { FC } from "react";
 import classes from "./styles.module.css";
 import { rackets } from "../../../../public/mocks/mocks";
-import { RacketImage } from "@/components/RacketImage";
+import { RacketImage } from "@/components/RackImage";
 
 export const generateStaticParams = () => {
   return [{ id: "1" }, { id: "2" }, { id: "3" }];
