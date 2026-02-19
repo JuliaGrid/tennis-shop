@@ -1,0 +1,35 @@
+.header {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.header__wrapper {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 15px 40px 20px 40px;
+}
+
+.header__title {
+  grid-column: 2;
+  justify-self: center;
+  margin: 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #4b5563;
+}
+
+.header__wrapper > :last-child {
+  grid-column: 3;
+  justify-self: end;
+}
+
+.header__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.header__item {
+  margin-left: 16px;
+}

@@ -1,0 +1,16 @@
+.racket {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 40% 1fr;
+  grid-column-gap: 80px;
+
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 70px;
+}
+
+.racket__price {
+  font-size: 22px;
+  margin-left: 20px;
+  margin-bottom: 60px;
+}

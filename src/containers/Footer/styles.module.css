@@ -1,0 +1,23 @@
+.footer {
+  margin-top: 60px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.footer__wrapper {
+  height: 100%;
+  padding-top: 20px;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.footer__title {
+  font-size: 24px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #4b5563;
+}
+
+.footer__note {
+  font-size: 14px;
+  color: #9ca3af;
+}
