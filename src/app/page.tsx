@@ -1,12 +1,13 @@
 import Link from "next/link";
 import classes from "./styles.module.css";
-import { rackets } from "../../public/mocks/mocks";
-import { RacketItem } from "@/containers/RacketItem";
 import { ROUTES } from "@/constants/routes";
 
-export default function Home() {
-  const reacketsList = rackets.slice(0, 3);
+import "swiper/css";
+import RacketsCarousel from "@/containers/RacketsCarousel/RacketsCarousel";
+import { getRackets } from "@/services/get-rackets";
+import { Suspense } from "react";
 
+export default function Home() {
   return (
     <section className={classes.carousel}>
       <div className={classes.carousel__header}>
@@ -15,17 +16,10 @@ export default function Home() {
           Все
         </Link>
       </div>
-      <ul className={classes.carousel__list}>
-        {reacketsList.map((item) => (
-          <li key={item.id}>
-            <RacketItem
-              id={item.id}
-              imageUrl={item.imageUrl}
-              name={item.name}
-            />
-          </li>
-        ))}
-      </ul>
+
+      <Suspense fallback={<div>loading</div>}>
+        <RacketsCarousel apiRequest={getRackets} />
+      </Suspense>
     </section>
   );
 }
