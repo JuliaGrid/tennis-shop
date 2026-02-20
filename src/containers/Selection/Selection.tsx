@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import RacketsCarousel from "../RacketsCarousel/RacketsCarousel";
 import { IResponse } from "@/types/Request";
 import { IRacket } from "@/types/Racket";
+import { Loader } from "@/components/Loader/Loader";
 
 interface ISelection {
   title: string;
@@ -23,7 +24,7 @@ export function Selection(props: ISelection) {
         </Link>
       </div>
 
-      <Suspense fallback={<div>loading</div>}>
+      <Suspense fallback={<Loader />}>
         <RacketsCarousel apiRequest={apiRequest} />
       </Suspense>
     </div>

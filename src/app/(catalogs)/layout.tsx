@@ -8,13 +8,11 @@ export default function CatalogLayout({
 }>) {
   return (
     <section className={classes.rackets}>
-      {/* <div className={classes.rackets__wrapper}> */}
       <aside className={classes.rackets__filters}>
         <Filters />
       </aside>
 
       <div className={classes.rackets__catalog}>{children}</div>
-      {/* </div> */}
     </section>
   );
 }

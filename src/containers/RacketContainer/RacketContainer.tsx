@@ -18,8 +18,6 @@ export async function RacketContainer(props: IRacketContainer) {
 
   const racket = response.data?.product;
 
-  console.log("response.data", response.data);
-
   return (
     <section className={classes.racket}>
       <div className={classes.racket__info}>
