@@ -12,8 +12,6 @@ export const getRackets = async (
       `${BASE_API_URL}/products?page=${page}&limit=${limit}`,
     );
 
-    console.log("resp", response);
-
     if (response.ok) {
       const json = await response.json();
       return { isError: false, data: json };
