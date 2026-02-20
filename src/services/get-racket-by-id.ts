@@ -2,20 +2,17 @@ import { BASE_API_URL } from "@/constants/service";
 import { IRacket } from "@/types/Racket";
 import { IResponse } from "@/types/Request";
 
-export const getRackets = async (
-  page = 1,
-  limit = 10,
-): Promise<IResponse<IRacket[]>> => {
-  console.log("loc");
+export const getRacketById = async (
+  id: string,
+): Promise<IResponse<{ product: IRacket }>> => {
   try {
-    const response = await fetch(
-      `${BASE_API_URL}/products?page=${page}&limit=${limit}`,
-    );
+    const response = await fetch(`${BASE_API_URL}/product/${id}`);
 
-    console.log("resp", response);
+    console.log("response", response);
 
     if (response.ok) {
       const json = await response.json();
+      console.log(json);
       return { isError: false, data: json };
     } else {
       return { isError: true, data: undefined };

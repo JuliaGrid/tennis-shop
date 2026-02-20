@@ -1,8 +1,8 @@
 import classes from "./styles.module.css";
 
 interface IRacketImage {
-  imageUrl: string;
-  alt: string;
+  imageUrl?: string;
+  alt?: string;
 }
 
 export function RacketImage(props: IRacketImage) {

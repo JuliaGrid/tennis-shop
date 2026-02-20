@@ -1,4 +1,4 @@
-import { Carousel } from "@/components/Carousel/Carousel";
+import { Catalog } from "@/components/Catalog/Catalog";
 import { NoData } from "@/components/NoData/NoData";
 import { IRacket } from "@/types/Racket";
 import { IResponse } from "@/types/Request";
@@ -7,7 +7,7 @@ interface IRacketsCarousel {
   apiRequest?: () => Promise<IResponse<IRacket[]>>;
 }
 
-export default async function RacketsCarousel(props: IRacketsCarousel) {
+export default async function RacketsCatalog(props: IRacketsCarousel) {
   const { apiRequest } = props;
   const response = await apiRequest?.();
 
@@ -15,5 +15,5 @@ export default async function RacketsCarousel(props: IRacketsCarousel) {
     return <NoData />;
   }
 
-  return <Carousel rackets={response?.data} />;
+  return <Catalog rackets={response?.data} />;
 }
