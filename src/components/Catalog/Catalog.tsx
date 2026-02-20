@@ -1,4 +1,4 @@
-import { RacketItem } from "@/components/RacketItem";
+import { RacketItem } from "@/components/RacketItem/RacketItem";
 import classes from "./Catalog.module.css";
 import { IRacket } from "@/types/Racket";
 

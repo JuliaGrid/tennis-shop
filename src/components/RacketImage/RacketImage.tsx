@@ -1,4 +1,4 @@
-import classes from "./styles.module.css";
+import classes from "./RacketImage.module.css";
 
 interface IRacketImage {
   imageUrl?: string;

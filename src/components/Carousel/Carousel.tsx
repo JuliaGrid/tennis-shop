@@ -5,7 +5,7 @@ import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 import { useEffect, useRef, useState } from "react";
 import classes from "./Carousel.module.css";
-import { RacketItem } from "@/components/RacketItem";
+import { RacketItem } from "@/components/RacketItem/RacketItem";
 import { IRacket } from "@/types/Racket";
 
 interface ICarousel {

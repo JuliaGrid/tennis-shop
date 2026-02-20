@@ -1,7 +1,7 @@
 import { getRacketById } from "@/services/get-racket-by-id";
 import classes from "./RacketContainer.module.css";
 import { notFound } from "next/navigation";
-import { RacketImage } from "@/components/RacketImage";
+import { RacketImage } from "@/components/RacketImage/RacketImage";
 
 interface IRacketContainer {
   id: string;

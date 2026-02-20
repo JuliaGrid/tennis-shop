@@ -4,12 +4,12 @@ import { IRacket } from "@/types/Racket";
 import { IResponse } from "@/types/Request";
 
 interface IRacketsCarousel {
-  apiRequest?: () => Promise<IResponse<IRacket[]>>;
+  apiRequest?: (page?: number, limit?: number) => Promise<IResponse<IRacket[]>>;
 }
 
 export default async function RacketsCatalog(props: IRacketsCarousel) {
   const { apiRequest } = props;
-  const response = await apiRequest?.();
+  const response = await apiRequest?.(1, 20);
 
   if (response?.isError) {
     return <NoData />;

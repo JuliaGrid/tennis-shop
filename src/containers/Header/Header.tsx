@@ -1,7 +1,7 @@
-import classes from "./styles.module.css";
+import classes from "./Header.module.css";
 import Link from "next/link";
 import { ROUTES } from "@/constants/routes";
-import { NavigationLink } from "@/components/NavigationLink";
+import { NavigationLink } from "@/components/NavigationLink/NavigationLink";
 
 export function Header() {
   return (
