@@ -1,0 +1,17 @@
+.rackets {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 40px;
+  padding-right: 40px;
+
+  max-width: 1800px;
+  margin: auto;
+}
+
+.rackets__filters {
+  width: 30%;
+}
+
+.rackets__catalog {
+  width: 70%;
+}

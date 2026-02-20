@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import classnames from "classnames";
-import classes from "./styles.module.css";
+import classes from "./NavigationLink.module.css";
 import { ReactNode } from "react";
 
 interface INavigationLink {

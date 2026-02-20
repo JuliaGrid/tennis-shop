@@ -1,4 +1,7 @@
 .racket {
+  max-width: 1800px;
+  margin: auto;
+
   display: grid;
   align-items: center;
   grid-template-columns: 1fr 40% 1fr;

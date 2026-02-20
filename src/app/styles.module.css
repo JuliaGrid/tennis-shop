@@ -1,31 +1,14 @@
-.carousel {
+.home {
   margin-top: 70px;
   padding-right: 40px;
   padding-left: 40px;
+  max-width: 1800px;
+  margin: auto;
 }
 
-.carousel__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.carousel__title {
-  margin: 0;
-  font-weight: 500;
-  color: #262626;
-}
-
-.carousel__all {
-  color: #3c82f6;
-}
-
-.carousel__list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 60px;
-  margin-top: 30px;
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
