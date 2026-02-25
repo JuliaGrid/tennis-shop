@@ -1,23 +1,14 @@
-.carousel {
-  position: relative;
+.embla {
+  overflow: hidden;
+  width: 100%;
 }
 
-.carousel__left {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 10%;
-  height: 100%;
-  z-index: 10;
-  border: 1px solid black;
+.emblaContainer {
+  display: flex;
 }
 
-.carousel__right {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 10%;
-  height: 100%;
-  z-index: 10;
-  border: 1px solid black;
+.emblaSlide {
+  min-width: 0;
+  flex: 0 0 calc((100% - 34px) / 3);
+  margin-right: 16px;
 }

@@ -1,9 +1,7 @@
 "use client";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import type { Swiper as SwiperType } from "swiper";
-import "swiper/css";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useCallback } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 import classes from "./Carousel.module.css";
 import { RacketItem } from "@/components/RacketItem/RacketItem";
 import { IRacket } from "@/types/Racket";
@@ -15,63 +13,57 @@ interface ICarousel {
 export function Carousel(props: ICarousel) {
   const { rackets } = props;
 
-  const swiperRef = useRef<SwiperType | null>(null);
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    align: "start",
+    dragFree: false,
+    containScroll: "trimSnaps",
+  });
+
   const intervalRef = useRef<number | null>(null);
 
-  const [isClient, setIsClient] = useState(false);
+  const handleMouseMove = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!emblaApi) return;
 
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setIsClient(true);
-  }, []);
+      const rect = e.currentTarget.getBoundingClientRect();
+      const x = e.clientX;
 
-  if (!isClient) return null;
+      const zoneWidth = rect.width * 0.15;
+      const leftZone = rect.left + zoneWidth;
+      const rightZone = rect.right - zoneWidth;
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    if (!swiperRef.current) return;
+      let direction: "next" | "prev" | null = null;
+      if (x < leftZone) direction = "prev";
+      else if (x > rightZone) direction = "next";
 
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX;
-
-    const zoneWidth = rect.width * 0.15; // 15% от ширины контейнера
-    const leftZone = rect.left + zoneWidth;
-    const rightZone = rect.right - zoneWidth;
-
-    // Определяем направление
-    let direction: "next" | "prev" | null = null;
-    if (x < leftZone) direction = "prev";
-    else if (x > rightZone) direction = "next";
-    else direction = null;
-
-    // Если нет направления — остановка
-    if (!direction) {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-        intervalRef.current = null;
+      if (!direction) {
+        if (intervalRef.current) {
+          clearInterval(intervalRef.current);
+          intervalRef.current = null;
+        }
+        return;
       }
-      return;
-    }
 
-    // Если интервал уже есть — не создаём новый
-    if (intervalRef.current) return;
+      if (intervalRef.current) return;
 
-    if (direction === "next") swiperRef.current.slideNext();
-    else swiperRef.current.slidePrev();
+      if (direction === "next") emblaApi.scrollNext();
+      else emblaApi.scrollPrev();
 
-    // ⏱ дальше по интервалу
-    intervalRef.current = window.setInterval(() => {
-      if (!swiperRef.current) return;
-      if (direction === "next") swiperRef.current.slideNext();
-      else swiperRef.current.slidePrev();
-    }, 500);
-  };
+      intervalRef.current = window.setInterval(() => {
+        if (!emblaApi) return;
+        if (direction === "next") emblaApi.scrollNext();
+        else emblaApi.scrollPrev();
+      }, 500);
+    },
+    [emblaApi],
+  );
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = useCallback(() => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
       intervalRef.current = null;
     }
-  };
+  }, []);
 
   return (
     <div
@@ -79,19 +71,15 @@ export function Carousel(props: ICarousel) {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      <Swiper
-        spaceBetween={16}
-        slidesPerView={3}
-        style={{ paddingRight: "2px" }}
-        onSwiper={(swiper) => (swiperRef.current = swiper)}
-        autoHeight={true}
-      >
-        {rackets?.map((item) => (
-          <SwiperSlide key={item.id}>
-            <RacketItem {...item} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <div className={classes.embla} ref={emblaRef}>
+        <div className={classes.emblaContainer}>
+          {rackets?.map((item) => (
+            <div className={classes.emblaSlide} key={item.id}>
+              <RacketItem {...item} />
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
