@@ -6,7 +6,6 @@ export const getRackets = async (
   page = 1,
   limit = 10,
 ): Promise<IResponse<IRacket[]>> => {
-  //   await new Promise((resolve) => setTimeout(resolve, 15000));
   try {
     const response = await fetch(
       `${BASE_API_URL}/products?page=${page}&limit=${limit}`,
