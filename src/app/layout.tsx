@@ -3,6 +3,7 @@ import "./global.css";
 import { Header } from "@/containers/Header/Header";
 import { Open_Sans } from "next/font/google";
 import { Metadata } from "next";
+import NextTopLoader from "nextjs-toploader";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -22,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${openSans.variable}`}>
       <body>
+        <NextTopLoader showSpinner={false} />
         <Header />
         <main>{children}</main>
         <Footer />
