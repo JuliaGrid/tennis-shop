@@ -2,18 +2,15 @@ import { BASE_API_URL } from "@/constants/service";
 import { IRacket } from "@/types/Racket";
 import { IResponse } from "@/types/Request";
 
-export const getRackets = async (
-  page = 1,
-  limit = 10,
-): Promise<IResponse<IRacket[]>> => {
+export const getRacketByIdMeta = async (
+  id: string,
+): Promise<IResponse<IRacket>> => {
   try {
-    const response = await fetch(
-      `${BASE_API_URL}/products?page=${page}&limit=${limit}`,
-    );
+    const response = await fetch(`${BASE_API_URL}/meta/product/${id}`);
 
     if (response.ok) {
-      const json = await response.json();
-      return { isError: false, data: json };
+      const data = await response.json();
+      return { isError: false, data: data.product };
     } else {
       return { isError: true, data: undefined };
     }
