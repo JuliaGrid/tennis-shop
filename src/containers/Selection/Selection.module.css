@@ -1,0 +1,20 @@
+.selection {
+  margin-top: 70px;
+}
+
+.selection__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.selection__title {
+  margin: 0;
+  margin-bottom: 50px;
+  font-weight: 500;
+  color: #262626;
+}
+
+.selection__all {
+  color: #3c82f6;
+}

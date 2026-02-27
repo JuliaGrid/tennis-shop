@@ -1,0 +1,14 @@
+.embla {
+  overflow: hidden;
+  width: 100%;
+}
+
+.emblaContainer {
+  display: flex;
+}
+
+.emblaSlide {
+  min-width: 0;
+  flex: 0 0 calc((100% - 34px) / 3);
+  margin-right: 16px;
+}
