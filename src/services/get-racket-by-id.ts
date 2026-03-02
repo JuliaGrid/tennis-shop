@@ -1,12 +1,19 @@
 import { BASE_API_URL } from "@/constants/service";
 import { IRacket } from "@/types/Racket";
 import { IResponse } from "@/types/Request";
+import { cookies } from "next/headers";
 
 export const getRacketById = async (
   id: string,
 ): Promise<IResponse<{ product: IRacket }>> => {
   try {
-    const response = await fetch(`${BASE_API_URL}/product/${id}`);
+    const cookieStore = await cookies();
+    const response = await fetch(`${BASE_API_URL}/product/${id}`, {
+      credentials: "include",
+      headers: {
+        Cookie: cookieStore.toString(),
+      },
+    });
 
     if (response.ok) {
       const json = await response.json();

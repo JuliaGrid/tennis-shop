@@ -6,6 +6,8 @@ import { Metadata } from "next";
 import NextTopLoader from "nextjs-toploader";
 import { AuthProvider } from "@/providers/AuthProvider";
 import { cookies } from "next/headers";
+import { UserProvider } from "@/providers/UserProvider";
+import { getUser } from "@/services/get-user";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -22,11 +24,10 @@ export default async function RootLayout({
 }: Readonly<{
   children?: React.ReactNode;
 }>) {
-  const token = (await cookies()).get("sessionId");
-  const isLogged = !!token;
+  const { data } = await getUser();
 
   return (
-    <AuthProvider isLogged={isLogged}>
+    <UserProvider user={data?.user}>
       <html lang="en" className={`${openSans.variable}`}>
         <body>
           <NextTopLoader showSpinner={false} />
@@ -35,6 +36,6 @@ export default async function RootLayout({
           <Footer />
         </body>
       </html>
-    </AuthProvider>
+    </UserProvider>
   );
 }

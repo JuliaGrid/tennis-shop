@@ -5,10 +5,12 @@ import Link from "next/link";
 import { ROUTES } from "@/constants/routes";
 import { NavigationLink } from "@/components/NavigationLink/NavigationLink";
 import { useContext } from "react";
-import { AuthContext } from "@/providers/AuthProvider";
+import { UserContext } from "@/providers/UserProvider";
 
 export function Header() {
-  const isLogged = useContext(AuthContext);
+  const user = useContext(UserContext);
+
+  console.log(user);
 
   return (
     <header className={classes.header}>
@@ -24,6 +26,13 @@ export function Header() {
             </li>
             <li className={classes.header__item}>
               <NavigationLink route={ROUTES.rackets}>Ракетки</NavigationLink>
+            </li>
+            <li className={classes.header__item}>
+              {user ? (
+                <NavigationLink route={ROUTES.rackets}>Профиль</NavigationLink>
+              ) : (
+                <NavigationLink route={ROUTES.rackets}>Вход</NavigationLink>
+              )}
             </li>
           </ul>
         </nav>
