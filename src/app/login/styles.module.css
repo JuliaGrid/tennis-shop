@@ -42,3 +42,28 @@
   outline: none;
   box-shadow: 0 1px 0 0 #4b5563;
 }
+
+.login__button {
+  font-family: inherit;
+  background: #f4f4f4;
+  color: #4b5563;
+  border: none;
+  font-size: 16px;
+  border-radius: 12px;
+  padding: 10px 12px;
+
+  width: 40%;
+  display: block;
+  margin: auto;
+  margin-top: 24px;
+}
+
+.login__button:hover {
+  background: rgb(221, 221, 221);
+}
+
+.login__error {
+  color: rgb(170, 0, 0);
+  font-size: 16px;
+  margin-top: 22px;
+}
