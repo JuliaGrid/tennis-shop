@@ -15,8 +15,6 @@ export const authLogin = async (
       headers: { "Content-Type": "application/json" },
     });
 
-    console.log("res", response);
-
     if (response.ok) {
       const cookiesStore = await cookies();
       const setCookieHeaders = response.headers.getSetCookie();
@@ -36,7 +34,7 @@ export const authLogin = async (
       }
       return { error: "" };
     } else {
-      return { error: "invalid login or password" };
+      return { error: "Неверный логин или пароль" };
     }
   } catch (e) {
     console.log("Error", e);

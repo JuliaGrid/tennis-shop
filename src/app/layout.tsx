@@ -4,6 +4,8 @@ import { Header } from "@/containers/Header/Header";
 import { Open_Sans } from "next/font/google";
 import { Metadata } from "next";
 import NextTopLoader from "nextjs-toploader";
+import { AuthProvider } from "@/providers/UserProvider";
+import { cookies } from "next/headers";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -15,19 +17,24 @@ export const metadata: Metadata = {
   description: "Buy tennis goods",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children?: React.ReactNode;
 }>) {
+  const token = (await cookies()).get("sessionId");
+  const isLogged = !!token;
+
   return (
-    <html lang="en" className={`${openSans.variable}`}>
-      <body>
-        <NextTopLoader showSpinner={false} />
-        <Header />
-        <main>{children}</main>
-        <Footer />
-      </body>
-    </html>
+    <AuthProvider isLogged={isLogged}>
+      <html lang="en" className={`${openSans.variable}`}>
+        <body>
+          <NextTopLoader showSpinner={false} />
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </body>
+      </html>
+    </AuthProvider>
   );
 }

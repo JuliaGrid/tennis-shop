@@ -1,9 +1,16 @@
+"use client";
+
 import classes from "./Header.module.css";
 import Link from "next/link";
 import { ROUTES } from "@/constants/routes";
 import { NavigationLink } from "@/components/NavigationLink/NavigationLink";
+import { useContext } from "react";
+import { AuthContext } from "@/providers/UserProvider";
 
 export function Header() {
+  const isLogged = useContext(AuthContext);
+
+  console.log("isLogged", isLogged);
   return (
     <header className={classes.header}>
       <div className={classes.header__wrapper}>
