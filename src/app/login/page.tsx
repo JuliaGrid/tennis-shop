@@ -15,13 +15,11 @@ export default function Login() {
     },
   );
 
-  console.log("is", isPending);
-
   const router = useRouter();
 
   useEffect(() => {
     if (isRedirect) {
-      router.push("/");
+      location.assign("/");
     }
   }, [isRedirect, router]);
 

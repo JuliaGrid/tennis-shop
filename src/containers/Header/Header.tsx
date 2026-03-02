@@ -10,8 +10,6 @@ import { UserContext } from "@/providers/UserProvider";
 export function Header() {
   const user = useContext(UserContext);
 
-  console.log(user);
-
   return (
     <header className={classes.header}>
       <div className={classes.header__wrapper}>
@@ -29,9 +27,9 @@ export function Header() {
             </li>
             <li className={classes.header__item}>
               {user ? (
-                <NavigationLink route={ROUTES.rackets}>Профиль</NavigationLink>
+                <NavigationLink route={ROUTES.profile}>Профиль</NavigationLink>
               ) : (
-                <NavigationLink route={ROUTES.rackets}>Вход</NavigationLink>
+                <NavigationLink route={ROUTES.login}>Вход</NavigationLink>
               )}
             </li>
           </ul>
