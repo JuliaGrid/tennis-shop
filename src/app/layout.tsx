@@ -4,7 +4,7 @@ import { Header } from "@/containers/Header/Header";
 import { Open_Sans } from "next/font/google";
 import { Metadata } from "next";
 import NextTopLoader from "nextjs-toploader";
-import { AuthProvider } from "@/providers/UserProvider";
+import { AuthProvider } from "@/providers/AuthProvider";
 import { cookies } from "next/headers";
 
 const openSans = Open_Sans({
