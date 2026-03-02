@@ -1,0 +1,44 @@
+.login__title {
+  text-align: center;
+  margin: 0;
+  color: #262626;
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.login__form {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 120px;
+  border-radius: 16px;
+  padding: 16px 28px;
+}
+
+.login__label {
+  display: block;
+  font-size: 18px;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  color: #4b5563;
+}
+
+.login__input {
+  width: 100%;
+  font-family: inherit;
+  box-sizing: border-box;
+  font-size: 16px;
+  padding: 10px;
+  padding-left: 2px;
+  color: #262626;
+  border: none;
+  border-bottom: 1px solid #4b5563;
+}
+
+.login__input:focus {
+  outline: none;
+  box-shadow: 0 1px 0 0 #4b5563;
+}
+.login__input:focus-visible {
+  outline: none;
+  box-shadow: 0 1px 0 0 #4b5563;
+}
