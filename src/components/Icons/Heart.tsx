@@ -15,7 +15,7 @@ export function HeartIcon(props: IHeartIcon) {
       xmlns="http://www.w3.org/2000/svg"
       style={style}
     >
-      <g clip-path="url(#clip0_403_3469)">
+      <g clipPath="url(#clip0_403_3469)">
         <path
           d={`M17.5002 0.917114C16.3742 0.934629 
 15.2727 1.24897 14.307 1.82839C13.3413 2.4078 12.5456 3.23178 

@@ -1,13 +1,13 @@
 "use client";
 
 import { useActionState, useEffect } from "react";
-import { loginAction } from "./loginAction";
+import { registerAction } from "./registerAction";
 import { useRouter } from "next/navigation";
 import { AuthForm } from "@/containers/AuthForm/AuthForm";
 
-export default function Login() {
+export default function Register() {
   const [{ error, isRedirect }, action, isPending] = useActionState(
-    loginAction,
+    registerAction,
     {
       error: "",
       isRedirect: false,
@@ -24,7 +24,12 @@ export default function Login() {
 
   return (
     <section>
-      <AuthForm error={error} isPending={isPending} action={action} />
+      <AuthForm
+        error={error}
+        isPending={isPending}
+        action={action}
+        isRegisterForm
+      />
     </section>
   );
 }

@@ -4,5 +4,6 @@ export const ROUTES = {
   top: "/top",
   profile: "/profile",
   login: "/login",
+  register: "/register",
   racket: (id: string | number) => `/racket/${id}`,
 };
