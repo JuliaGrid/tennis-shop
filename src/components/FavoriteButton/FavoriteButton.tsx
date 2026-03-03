@@ -1,3 +1,5 @@
+"use client";
+
 import { UserContext } from "@/providers/UserProvider";
 import { useContext } from "react";
 import { HeartIcon } from "../Icons/Heart";
