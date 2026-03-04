@@ -2,7 +2,7 @@
 
 import { authLogout } from "@/services/auth/auth-logout";
 import { useTransition } from "react";
-import { Loader } from "../Loader/Loader";
+import { ButtonWithLoader } from "../../components/ButtonWithLoader/ButtonWithLoader";
 
 export function LogoutButton() {
   const [isPending, startPending] = useTransition();
@@ -13,8 +13,10 @@ export function LogoutButton() {
   };
 
   return (
-    <button onClick={() => startPending(logout)} disabled={isPending}>
-      {isPending ? <Loader size={24} /> : "Выйти"}
-    </button>
+    <ButtonWithLoader
+      text="Выйти"
+      isPending={isPending}
+      onClick={() => startPending(logout)}
+    />
   );
 }

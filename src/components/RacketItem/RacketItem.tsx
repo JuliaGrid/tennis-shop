@@ -2,7 +2,7 @@ import Link from "next/link";
 import classes from "./RacketItem.module.css";
 import { RacketImage } from "@/components/RacketImage/RacketImage";
 import { ROUTES } from "@/constants/routes";
-import { FavoriteButton } from "../FavoriteButton/FavoriteButton";
+import { FavoriteButton } from "../../containers/FavoriteButton/FavoriteButton";
 import { IRacket } from "@/types/Racket";
 
 export function RacketItem(props: IRacket) {
@@ -14,7 +14,7 @@ export function RacketItem(props: IRacket) {
         <RacketImage imageUrl={imageUrl} alt={name} />
         <p className={classes.racket__name}>{name}</p>
       </Link>
-      <FavoriteButton isFavorite={userData.isFavorite} id={id} />
+      <FavoriteButton isFavorite={userData?.isFavorite} id={id} />
     </div>
   );
 }

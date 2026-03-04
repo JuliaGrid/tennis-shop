@@ -2,7 +2,7 @@ import { getRacketById } from "@/services/racket-by-id/get-racket-by-id";
 import classes from "./RacketContainer.module.css";
 import { notFound } from "next/navigation";
 import { RacketImage } from "@/components/RacketImage/RacketImage";
-import { FavoriteButton } from "@/components/FavoriteButton/FavoriteButton";
+import { FavoriteButton } from "@/containers/FavoriteButton/FavoriteButton";
 
 interface IRacketContainer {
   id: number;

@@ -2,7 +2,7 @@
 
 import { UserContext } from "@/providers/UserProvider";
 import { useContext, useEffect } from "react";
-import { HeartIcon } from "../Icons/Heart";
+import { HeartIcon } from "../../components/Icons/Heart";
 import classes from "./FavoriteButton.module.css";
 import { FavoriteContext } from "@/providers/FavoriteProvider";
 import { deleteFavorite } from "@/services/favorite/delete-favorite";
