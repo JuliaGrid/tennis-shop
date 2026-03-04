@@ -3,6 +3,7 @@ import { Loader } from "@/components/Loader/Loader";
 import classes from "./AuthForm.module.css";
 import Link from "next/link";
 import { ROUTES } from "@/constants/routes";
+import { ButtonWithLoader } from "@/components/ButtonWithLoader/ButtonWithLoader";
 
 interface IAuthForm {
   action: (payload: FormData) => void;
@@ -19,8 +20,8 @@ export function AuthForm(props: IAuthForm) {
       <h2 className={classes.authForm__title}>
         Форма {isRegisterForm ? "регистрации" : "входа"}
       </h2>
-      <FormInput id="login" name="login" type="text" />
-      <FormInput id="password" name="password" type="password" />
+      <FormInput id="login" name="login" type="text" label="Логин" />
+      <FormInput id="password" name="password" type="password" label="Пароль" />
 
       {isRegisterForm ? (
         <p>
@@ -40,15 +41,10 @@ export function AuthForm(props: IAuthForm) {
 
       {error && <div className={classes.authForm__error}>{error}</div>}
 
-      <button className={classes.authForm__button} disabled={isPending}>
-        {isPending ? (
-          <Loader size={24} />
-        ) : isRegisterForm ? (
-          "Зарегистрироваться"
-        ) : (
-          "Войти"
-        )}
-      </button>
+      <ButtonWithLoader
+        text={isRegisterForm ? "Зарегистрироваться" : "Войти"}
+        isPending={isPending}
+      />
     </form>
   );
 }

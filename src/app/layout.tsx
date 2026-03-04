@@ -4,10 +4,9 @@ import { Header } from "@/containers/Header/Header";
 import { Open_Sans } from "next/font/google";
 import { Metadata } from "next";
 import NextTopLoader from "nextjs-toploader";
-import { AuthProvider } from "@/providers/AuthProvider";
-import { cookies } from "next/headers";
 import { UserProvider } from "@/providers/UserProvider";
-import { getUser } from "@/services/get-user";
+import { getUser } from "@/services/user/get-user";
+import { FavoriteProvider } from "@/providers/FavoriteProvider";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -28,14 +27,16 @@ export default async function RootLayout({
 
   return (
     <UserProvider user={data?.user}>
-      <html lang="en" className={`${openSans.variable}`}>
-        <body>
-          <NextTopLoader showSpinner={false} />
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </body>
-      </html>
+      <FavoriteProvider>
+        <html lang="en" className={`${openSans.variable}`}>
+          <body>
+            <NextTopLoader showSpinner={false} />
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </body>
+        </html>
+      </FavoriteProvider>
     </UserProvider>
   );
 }

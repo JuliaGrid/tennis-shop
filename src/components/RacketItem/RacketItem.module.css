@@ -1,4 +1,8 @@
 .racket {
+  position: relative;
+}
+
+.racket__link {
   height: 100%;
   display: flex;
   flex-direction: column;

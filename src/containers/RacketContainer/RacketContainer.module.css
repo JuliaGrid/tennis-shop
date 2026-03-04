@@ -12,6 +12,10 @@
   margin-top: 70px;
 }
 
+.racket__img {
+  position: relative;
+}
+
 .racket__price {
   font-size: 22px;
   margin-left: 20px;

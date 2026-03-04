@@ -16,7 +16,7 @@ export interface IRacket {
   description: string;
   brand: IBrand;
   brandId: number;
-  userData: IUserProduct[];
+  userData: IUserProduct;
 }
 
 export interface IUserProduct {

@@ -13,7 +13,7 @@ export function Catalog(props: ICatalog) {
     <ul className={classes.catalog__list}>
       {rackets?.map((item) => (
         <li key={item.id}>
-          <RacketItem id={item.id} imageUrl={item.imageUrl} name={item.name} />
+          <RacketItem {...item} />
         </li>
       ))}
     </ul>

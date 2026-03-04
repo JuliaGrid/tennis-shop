@@ -26,6 +26,9 @@ export function Header() {
               <NavigationLink route={ROUTES.rackets}>Ракетки</NavigationLink>
             </li>
             <li className={classes.header__item}>
+              <NavigationLink route={ROUTES.top}>Топ</NavigationLink>
+            </li>
+            <li className={classes.header__item}>
               {user ? (
                 <NavigationLink route={ROUTES.profile}>Профиль</NavigationLink>
               ) : (

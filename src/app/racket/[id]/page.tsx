@@ -1,7 +1,7 @@
 import { FC, Suspense } from "react";
 import { RacketContainer } from "@/containers/RacketContainer/RacketContainer";
 import { Loader } from "@/components/Loader/Loader";
-import { getRacketByIdMeta } from "@/services/get-racket-by-id-meta";
+import { getRacketByIdMeta } from "@/services/racket-by-id/get-racket-by-id-meta";
 
 export async function generateMetadata({ params }: PageProps<"/racket/[id]">) {
   const { id } = await params;
@@ -26,7 +26,7 @@ const RacketPage: FC<PageProps<"/racket/[id]">> = async ({ params }) => {
 
   return (
     <Suspense fallback={<Loader />}>
-      <RacketContainer id={id} />
+      <RacketContainer id={+id} />
     </Suspense>
   );
 };

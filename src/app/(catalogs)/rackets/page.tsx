@@ -1,7 +1,7 @@
 import classes from "./styles.module.css";
 import { Suspense } from "react";
 import RacketsCatalog from "@/containers/RacketsCatalog/RacketsCatalog";
-import { getRackets } from "@/services/get-rackets";
+import { getRackets } from "@/services/rackets/get-rackets";
 import { Loader } from "@/components/Loader/Loader";
 
 export default function RacketsPage() {
