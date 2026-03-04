@@ -26,7 +26,7 @@ const RacketPage: FC<PageProps<"/racket/[id]">> = async ({ params }) => {
 
   return (
     <Suspense fallback={<Loader />}>
-      <RacketContainer id={id} />
+      <RacketContainer id={+id} />
     </Suspense>
   );
 };

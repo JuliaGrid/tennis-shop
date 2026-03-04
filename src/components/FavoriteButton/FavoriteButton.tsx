@@ -9,7 +9,7 @@ import { deleteFavorite } from "@/services/favorite/delete-favorite";
 import { addFavorite } from "@/services/favorite/add-favorite";
 
 interface IFavoriteButton {
-  isFavorite: boolean;
+  isFavorite?: boolean;
   id: number;
 }
 

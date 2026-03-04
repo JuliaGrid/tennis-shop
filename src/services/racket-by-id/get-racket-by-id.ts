@@ -4,7 +4,7 @@ import { IResponse } from "@/types/Request";
 import { cookies } from "next/headers";
 
 export const getRacketById = async (
-  id: string,
+  id: number,
 ): Promise<IResponse<{ product: IRacket }>> => {
   try {
     const cookieStore = await cookies();

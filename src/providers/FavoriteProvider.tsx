@@ -8,7 +8,7 @@ interface IFavoriteProvider {
 
 interface IFavoriteContext {
   favorites: Record<number, boolean>;
-  changeFavorites: (id: number, isFavorite: boolean) => void;
+  changeFavorites: (id: number, isFavorite?: boolean) => void;
 }
 export const FavoriteContext = createContext<IFavoriteContext>({
   favorites: {},
@@ -19,7 +19,7 @@ export function FavoriteProvider(props: IFavoriteProvider) {
   const [favorites, setFavorites] = useState({});
   const { children } = props;
 
-  const changeFavorites = useCallback((id: number, isFavorite: boolean) => {
+  const changeFavorites = useCallback((id: number, isFavorite?: boolean) => {
     setFavorites((prev) => ({
       ...prev,
       [id]: isFavorite,
