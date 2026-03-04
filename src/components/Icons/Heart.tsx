@@ -1,10 +1,9 @@
 interface IHeartIcon {
   isFill?: boolean;
-  style?: React.CSSProperties;
 }
 
 export function HeartIcon(props: IHeartIcon) {
-  const { isFill, style } = props;
+  const { isFill } = props;
 
   return (
     <svg
@@ -13,7 +12,6 @@ export function HeartIcon(props: IHeartIcon) {
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      style={style}
     >
       <g clipPath="url(#clip0_403_3469)">
         <path
@@ -24,8 +22,9 @@ export function HeartIcon(props: IHeartIcon) {
 4.42232 -0.0675481 6.17164 0.000202431 7.96711C0.000202431 14.7421 10.9562 22.5671 11.4222 22.8991L12.0002 
 23.3081L12.5782 22.8991C13.0442 22.5691 24.0002 14.7421 24.0002 7.96711C24.068 6.17164 23.4223 
 4.42232 22.2044 3.10135C20.9865 1.78037 19.2953 0.995105 17.5002 0.917114Z${
-            !isFill &&
-            `M12.0002 20.8461C8.7472
+            isFill
+              ? ""
+              : `M12.0002 20.8461C8.7472
  18.4161 2.0002 12.4461 2.0002 7.96711C1.93184 6.70183 2.36657 5.46084 3.20957 4.51481C4.05256 3.56878 5.23544
   2.99446 6.5002 2.91711C7.76497 2.99446 8.94784 3.56878 9.79084 4.51481C10.6338 5.46084 11.0686 6.70183 11.0002
    7.96711H13.0002C12.9318 6.70183 13.3666 5.46084 14.2096 4.51481C15.0526 3.56878 16.2354 2.99446 17.5002

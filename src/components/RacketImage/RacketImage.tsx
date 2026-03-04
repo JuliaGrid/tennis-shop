@@ -1,4 +1,3 @@
-import { FavoriteButton } from "../FavoriteButton/FavoriteButton";
 import classes from "./RacketImage.module.css";
 
 interface IRacketImage {
@@ -10,11 +9,8 @@ export function RacketImage(props: IRacketImage) {
   const { imageUrl, alt } = props;
 
   return (
-    <div className={classes.container}>
-      <div className={classes.cardImageWrapper}>
-        <img src={imageUrl} alt={alt} className={classes.cardImage} />
-      </div>
-      <FavoriteButton />
+    <div className={classes.cardImageWrapper}>
+      <img src={imageUrl} alt={alt} className={classes.cardImage} />
     </div>
   );
 }
