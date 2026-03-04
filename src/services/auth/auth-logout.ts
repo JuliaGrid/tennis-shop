@@ -7,8 +7,6 @@ export const authLogout = async (): Promise<{ error: string }> => {
       credentials: "include",
     });
 
-    console.log("res", response);
-
     if (response.ok) {
       return { error: "" };
     } else {
