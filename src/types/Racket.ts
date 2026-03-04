@@ -24,6 +24,15 @@ export interface IUserProduct {
   userId: number;
   productId: number;
   isFavorite: boolean;
-  //   user :   User
+  user: IUser;
   product: IRacket;
+}
+
+export interface IUser {
+  id?: number;
+  login: string;
+  password?: string;
+  isAdmin: boolean;
+  // session     Session[]
+  // userProduct UserProduct[]
 }

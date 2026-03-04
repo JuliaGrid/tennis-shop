@@ -1,9 +1,15 @@
+"use client";
+
 import classes from "./Header.module.css";
 import Link from "next/link";
 import { ROUTES } from "@/constants/routes";
 import { NavigationLink } from "@/components/NavigationLink/NavigationLink";
+import { useContext } from "react";
+import { UserContext } from "@/providers/UserProvider";
 
 export function Header() {
+  const user = useContext(UserContext);
+
   return (
     <header className={classes.header}>
       <div className={classes.header__wrapper}>
@@ -18,6 +24,13 @@ export function Header() {
             </li>
             <li className={classes.header__item}>
               <NavigationLink route={ROUTES.rackets}>Ракетки</NavigationLink>
+            </li>
+            <li className={classes.header__item}>
+              {user ? (
+                <NavigationLink route={ROUTES.profile}>Профиль</NavigationLink>
+              ) : (
+                <NavigationLink route={ROUTES.login}>Вход</NavigationLink>
+              )}
             </li>
           </ul>
         </nav>

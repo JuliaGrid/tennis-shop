@@ -1,3 +1,7 @@
+.container {
+  position: relative;
+}
+
 .cardImageWrapper {
   width: 100%;
   aspect-ratio: 3 / 4;
