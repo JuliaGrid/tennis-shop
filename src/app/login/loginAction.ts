@@ -1,4 +1,4 @@
-import { authLogin } from "@/services/auth-login";
+import { authLogin } from "@/services/auth/auth-login";
 
 export async function loginAction(
   prevState: { error?: string; isRedirect?: boolean },

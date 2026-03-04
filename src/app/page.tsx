@@ -1,8 +1,8 @@
 import classes from "./styles.module.css";
 import { ROUTES } from "@/constants/routes";
 import { Selection } from "@/containers/Selection/Selection";
-import { getRackets } from "@/services/get-rackets";
-import { getRacketsTop10 } from "@/services/get-rackets-top-10";
+import { getRackets } from "@/services/rackets/get-rackets";
+import { getRacketsTop10 } from "@/services/rackets/get-rackets-top-10";
 
 export default function Home() {
   return (

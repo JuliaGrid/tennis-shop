@@ -1,4 +1,4 @@
-import { authRegister } from "@/services/auth-register";
+import { authRegister } from "@/services/auth/auth-register";
 
 export async function registerAction(
   prevState: { error?: string; isRedirect?: boolean },

@@ -1,6 +1,6 @@
 "use client";
 
-import { authLogout } from "@/services/auth-logout";
+import { authLogout } from "@/services/auth/auth-logout";
 import { useTransition } from "react";
 import { Loader } from "../Loader/Loader";
 

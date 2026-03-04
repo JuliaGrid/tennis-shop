@@ -4,10 +4,8 @@ import { Header } from "@/containers/Header/Header";
 import { Open_Sans } from "next/font/google";
 import { Metadata } from "next";
 import NextTopLoader from "nextjs-toploader";
-import { AuthProvider } from "@/providers/AuthProvider";
-import { cookies } from "next/headers";
 import { UserProvider } from "@/providers/UserProvider";
-import { getUser } from "@/services/get-user";
+import { getUser } from "@/services/user/get-user";
 import { FavoriteProvider } from "@/providers/FavoriteProvider";
 
 const openSans = Open_Sans({
